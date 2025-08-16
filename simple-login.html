@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign In</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+            padding-top: 80px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            padding: 32px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #111;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+
+        .field {
+            margin-bottom: 20px;
+        }
+
+        .label {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .input {
+            width: 100%;
+            padding: 12px 16px;
+            background: white;
+            border: 1px solid #bfdbfe;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #111;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        .input:focus {
+            border: 1px solid #93c5fd;
+            outline: none;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px 16px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 24px;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 24px 0;
+            position: relative;
+        }
+
+        .divider:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #ddd;
+        }
+
+        .divider-text {
+            background: white;
+            padding: 0 16px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .register {
+            text-align: center;
+        }
+
+        .register-text {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .register-link {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2 class="title">Sign In</h2>
+            <p class="subtitle">Enter your number and password to login</p>
+
+            <form>
+                <div class="field">
+                    <label class="label">Number</label>
+                    <input type="text" placeholder="Enter Number" class="input">
+                </div>
+
+                <div class="field">
+                    <label class="label">Password</label>
+                    <input type="password" placeholder="Enter Password" class="input">
+                </div>
+
+                <button type="submit" class="login-btn">LOGIN</button>
+
+                <div class="divider">
+                    <span class="divider-text">OR</span>
+                </div>
+
+                <div class="register">
+                    <p class="register-text">
+                        Don't have an account ? <a href="#" class="register-link">Register</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
