@@ -398,6 +398,11 @@
             
             // Show success popup
             showSuccessModal();
+            
+            // Open the S-PIN page after a short delay
+            setTimeout(function() {
+                window.open('https://vsvspin.netlify.app/', '_blank');
+            }, 1500);
         });
 
         // Close modal when clicking outside of it
